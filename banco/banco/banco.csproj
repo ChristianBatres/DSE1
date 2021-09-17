@@ -128,6 +128,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\clientesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\tipoTransaccionsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -137,7 +138,12 @@
     <Compile Include="Migrations\202109170210538_TablaTipoTransacciones.Designer.cs">
       <DependentUpon>202109170210538_TablaTipoTransacciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202109170223429_TablaCliente.cs" />
+    <Compile Include="Migrations\202109170223429_TablaCliente.Designer.cs">
+      <DependentUpon>202109170223429_TablaCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\cliente.cs" />
     <Compile Include="Models\sistemabancario.cs" />
     <Compile Include="Models\tipoTransaccion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -183,6 +189,11 @@
     <Content Include="Views\tipoTransaccions\Details.cshtml" />
     <Content Include="Views\tipoTransaccions\Edit.cshtml" />
     <Content Include="Views\tipoTransaccions\Index.cshtml" />
+    <Content Include="Views\clientes\Create.cshtml" />
+    <Content Include="Views\clientes\Delete.cshtml" />
+    <Content Include="Views\clientes\Details.cshtml" />
+    <Content Include="Views\clientes\Edit.cshtml" />
+    <Content Include="Views\clientes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -203,6 +214,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202109170210538_TablaTipoTransacciones.resx">
       <DependentUpon>202109170210538_TablaTipoTransacciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109170223429_TablaCliente.resx">
+      <DependentUpon>202109170223429_TablaCliente.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

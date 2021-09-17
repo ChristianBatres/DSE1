@@ -90,3 +90,4 @@ D:\otros\DSE1\banco\banco\obj\Debug\banco.dll
 D:\otros\DSE1\banco\banco\obj\Debug\banco.pdb
 D:\otros\DSE1\banco\banco\obj\Debug\banco.Migrations.TablaTipoTransacciones.resources
 D:\otros\DSE1\banco\banco\obj\Debug\banco.csproj.GenerateResource.cache
+D:\otros\DSE1\banco\banco\obj\Debug\banco.Migrations.TablaCliente.resources
