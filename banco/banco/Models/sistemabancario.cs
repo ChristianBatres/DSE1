@@ -22,6 +22,7 @@ namespace banco.Models
         // sobre cómo configurar y usar un modelo Code First, vea http://go.microsoft.com/fwlink/?LinkId=390109.
 
         public virtual DbSet<tipoTransaccion> tipoTransaccion { get; set; }
+        public virtual DbSet<cliente> cliente { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
