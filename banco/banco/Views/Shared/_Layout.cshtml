@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    <title>@ViewBag.Title - Sistema Bancario</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -25,6 +25,8 @@
                     <li>@Html.ActionLink("Clientes", "Index", "clientes")</li>
                     <li>@Html.ActionLink("Tipo de Transaccion", "Index", "tipoTransaccions")</li>
                     <li>@Html.ActionLink("Tipo de Cuenta", "Index", "tipoCuentaBancarias")</li>
+                    <li>@Html.ActionLink("Cuenta Bancaria", "Index", "cuentaBancarias")</li>
+                    <li>@Html.ActionLink("Transacciones", "Index", "transacciones")</li>
 
                 </ul>
             </div>
@@ -34,7 +36,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+            <p>&copy; @DateTime.Now.Year - Sistema Bancario</p>
         </footer>
     </div>
 
