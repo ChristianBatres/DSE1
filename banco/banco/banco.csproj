@@ -129,9 +129,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\clientesController.cs" />
+    <Compile Include="Controllers\cuentaBancariasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\tipoCuentaBancariasController.cs" />
     <Compile Include="Controllers\tipoTransaccionsController.cs" />
+    <Compile Include="Controllers\transaccionesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -147,11 +149,29 @@
     <Compile Include="Migrations\202109170247415_TablaTipoCuenta.Designer.cs">
       <DependentUpon>202109170247415_TablaTipoCuenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202109170311069_TablaCuentaBancaria.cs" />
+    <Compile Include="Migrations\202109170311069_TablaCuentaBancaria.Designer.cs">
+      <DependentUpon>202109170311069_TablaCuentaBancaria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109170423158_Modificacion-TablaCuentaBancaria.cs" />
+    <Compile Include="Migrations\202109170423158_Modificacion-TablaCuentaBancaria.Designer.cs">
+      <DependentUpon>202109170423158_Modificacion-TablaCuentaBancaria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109171933146_Modificacion-TablaCuentaBancaria2.cs" />
+    <Compile Include="Migrations\202109171933146_Modificacion-TablaCuentaBancaria2.Designer.cs">
+      <DependentUpon>202109171933146_Modificacion-TablaCuentaBancaria2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109171949025_tabla_Transacciones.cs" />
+    <Compile Include="Migrations\202109171949025_tabla_Transacciones.Designer.cs">
+      <DependentUpon>202109171949025_tabla_Transacciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\cliente.cs" />
+    <Compile Include="Models\cuentaBancaria.cs" />
     <Compile Include="Models\sistemabancario.cs" />
     <Compile Include="Models\tipoCuentaBancaria.cs" />
     <Compile Include="Models\tipoTransaccion.cs" />
+    <Compile Include="Models\transacciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -205,6 +225,16 @@
     <Content Include="Views\tipoCuentaBancarias\Details.cshtml" />
     <Content Include="Views\tipoCuentaBancarias\Edit.cshtml" />
     <Content Include="Views\tipoCuentaBancarias\Index.cshtml" />
+    <Content Include="Views\cuentaBancarias\Create.cshtml" />
+    <Content Include="Views\cuentaBancarias\Delete.cshtml" />
+    <Content Include="Views\cuentaBancarias\Details.cshtml" />
+    <Content Include="Views\cuentaBancarias\Edit.cshtml" />
+    <Content Include="Views\cuentaBancarias\Index.cshtml" />
+    <Content Include="Views\transacciones\Create.cshtml" />
+    <Content Include="Views\transacciones\Delete.cshtml" />
+    <Content Include="Views\transacciones\Details.cshtml" />
+    <Content Include="Views\transacciones\Edit.cshtml" />
+    <Content Include="Views\transacciones\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -231,6 +261,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109170247415_TablaTipoCuenta.resx">
       <DependentUpon>202109170247415_TablaTipoCuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109170311069_TablaCuentaBancaria.resx">
+      <DependentUpon>202109170311069_TablaCuentaBancaria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109170423158_Modificacion-TablaCuentaBancaria.resx">
+      <DependentUpon>202109170423158_Modificacion-TablaCuentaBancaria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109171933146_Modificacion-TablaCuentaBancaria2.resx">
+      <DependentUpon>202109171933146_Modificacion-TablaCuentaBancaria2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109171949025_tabla_Transacciones.resx">
+      <DependentUpon>202109171949025_tabla_Transacciones.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
