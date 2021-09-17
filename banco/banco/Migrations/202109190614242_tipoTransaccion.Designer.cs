@@ -7,13 +7,13 @@ namespace banco.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class TablaTipoTransacciones : IMigrationMetadata
+    public sealed partial class tipoTransaccion : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(TablaTipoTransacciones));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(tipoTransaccion));
         
         string IMigrationMetadata.Id
         {
-            get { return "202109170210538_TablaTipoTransacciones"; }
+            get { return "202109190614242_tipoTransaccion"; }
         }
         
         string IMigrationMetadata.Source

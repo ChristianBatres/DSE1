@@ -129,29 +129,33 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\clientesController.cs" />
+    <Compile Include="Controllers\cuentaBancariasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\tipoCuentaBancariasController.cs" />
     <Compile Include="Controllers\tipoTransaccionsController.cs" />
+    <Compile Include="Controllers\transaccionsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202109170210538_TablaTipoTransacciones.cs" />
-    <Compile Include="Migrations\202109170210538_TablaTipoTransacciones.Designer.cs">
-      <DependentUpon>202109170210538_TablaTipoTransacciones.cs</DependentUpon>
+    <Compile Include="Migrations\202109190543502_cuentabac.cs" />
+    <Compile Include="Migrations\202109190543502_cuentabac.Designer.cs">
+      <DependentUpon>202109190543502_cuentabac.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202109170223429_TablaCliente.cs" />
-    <Compile Include="Migrations\202109170223429_TablaCliente.Designer.cs">
-      <DependentUpon>202109170223429_TablaCliente.cs</DependentUpon>
+    <Compile Include="Migrations\202109190607199_transaccion.cs" />
+    <Compile Include="Migrations\202109190607199_transaccion.Designer.cs">
+      <DependentUpon>202109190607199_transaccion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202109170247415_TablaTipoCuenta.cs" />
-    <Compile Include="Migrations\202109170247415_TablaTipoCuenta.Designer.cs">
-      <DependentUpon>202109170247415_TablaTipoCuenta.cs</DependentUpon>
+    <Compile Include="Migrations\202109190614242_tipoTransaccion.cs" />
+    <Compile Include="Migrations\202109190614242_tipoTransaccion.Designer.cs">
+      <DependentUpon>202109190614242_tipoTransaccion.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\cliente.cs" />
+    <Compile Include="Models\cuentaBancaria.cs" />
     <Compile Include="Models\sistemabancario.cs" />
     <Compile Include="Models\tipoCuentaBancaria.cs" />
     <Compile Include="Models\tipoTransaccion.cs" />
+    <Compile Include="Models\transaccion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -190,11 +194,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\tipoTransaccions\Create.cshtml" />
-    <Content Include="Views\tipoTransaccions\Delete.cshtml" />
-    <Content Include="Views\tipoTransaccions\Details.cshtml" />
-    <Content Include="Views\tipoTransaccions\Edit.cshtml" />
-    <Content Include="Views\tipoTransaccions\Index.cshtml" />
     <Content Include="Views\clientes\Create.cshtml" />
     <Content Include="Views\clientes\Delete.cshtml" />
     <Content Include="Views\clientes\Details.cshtml" />
@@ -205,6 +204,21 @@
     <Content Include="Views\tipoCuentaBancarias\Details.cshtml" />
     <Content Include="Views\tipoCuentaBancarias\Edit.cshtml" />
     <Content Include="Views\tipoCuentaBancarias\Index.cshtml" />
+    <Content Include="Views\cuentaBancarias\Create.cshtml" />
+    <Content Include="Views\cuentaBancarias\Delete.cshtml" />
+    <Content Include="Views\cuentaBancarias\Details.cshtml" />
+    <Content Include="Views\cuentaBancarias\Edit.cshtml" />
+    <Content Include="Views\cuentaBancarias\Index.cshtml" />
+    <Content Include="Views\tipoTransaccions\Create.cshtml" />
+    <Content Include="Views\tipoTransaccions\Delete.cshtml" />
+    <Content Include="Views\tipoTransaccions\Details.cshtml" />
+    <Content Include="Views\tipoTransaccions\Edit.cshtml" />
+    <Content Include="Views\tipoTransaccions\Index.cshtml" />
+    <Content Include="Views\transaccions\Create.cshtml" />
+    <Content Include="Views\transaccions\Delete.cshtml" />
+    <Content Include="Views\transaccions\Details.cshtml" />
+    <Content Include="Views\transaccions\Edit.cshtml" />
+    <Content Include="Views\transaccions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -223,14 +237,14 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202109170210538_TablaTipoTransacciones.resx">
-      <DependentUpon>202109170210538_TablaTipoTransacciones.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202109190543502_cuentabac.resx">
+      <DependentUpon>202109190543502_cuentabac.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202109170223429_TablaCliente.resx">
-      <DependentUpon>202109170223429_TablaCliente.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202109190607199_transaccion.resx">
+      <DependentUpon>202109190607199_transaccion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202109170247415_TablaTipoCuenta.resx">
-      <DependentUpon>202109170247415_TablaTipoCuenta.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202109190614242_tipoTransaccion.resx">
+      <DependentUpon>202109190614242_tipoTransaccion.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

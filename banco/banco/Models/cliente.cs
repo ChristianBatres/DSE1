@@ -32,5 +32,7 @@ namespace banco.Models
         [StringLength(100)]
         [EmailAddress(ErrorMessage = "El correo no cumple con el formato correcto")]
         public string email { get; set; }
+
+        public virtual ICollection<cuentaBancaria> CuentaBancarias { get; set; } // propiedad de navegación de colección
     }
 }

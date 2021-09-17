@@ -7,13 +7,13 @@ namespace banco.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class TablaCliente : IMigrationMetadata
+    public sealed partial class ModificacionTablaCuentaBancaria2 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(TablaCliente));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ModificacionTablaCuentaBancaria2));
         
         string IMigrationMetadata.Id
         {
-            get { return "202109170223429_TablaCliente"; }
+            get { return "202109171933146_Modificacion-TablaCuentaBancaria2"; }
         }
         
         string IMigrationMetadata.Source
