@@ -23,6 +23,7 @@ namespace banco.Models
 
         public virtual DbSet<tipoTransaccion> tipoTransaccion { get; set; }
         public virtual DbSet<cliente> cliente { get; set; }
+        public virtual DbSet<tipoCuentaBancaria> tipoCuentaBancaria { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
