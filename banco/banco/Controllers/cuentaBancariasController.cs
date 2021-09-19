@@ -17,7 +17,8 @@ namespace banco.Controllers
         // GET: cuentaBancarias
         public ActionResult Index()
         {
-            return View(db.cuentaBancaria.ToList());
+            var cuentaBancaria = db.cuentaBancaria.Include(c => c.cliente).Include(c => c.tipoCuentaBancaria);
+            return View(cuentaBancaria.ToList());
         }
 
         // GET: cuentaBancarias/Details/5
@@ -38,6 +39,8 @@ namespace banco.Controllers
         // GET: cuentaBancarias/Create
         public ActionResult Create()
         {
+            ViewBag.cliente_Id = new SelectList(db.cliente, "id", "nombre");
+            ViewBag.tipo_id = new SelectList(db.tipoCuentaBancaria, "id", "tipo");
             return View();
         }
 
@@ -46,7 +49,7 @@ namespace banco.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,cliente_id,Moneda,tipo_id")] cuentaBancaria cuentaBancaria)
+        public ActionResult Create([Bind(Include = "id,cliente_Id,Moneda,tipo_id")] cuentaBancaria cuentaBancaria)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +58,8 @@ namespace banco.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.cliente_Id = new SelectList(db.cliente, "id", "nombre", cuentaBancaria.cliente_Id);
+            ViewBag.tipo_id = new SelectList(db.tipoCuentaBancaria, "id", "tipo", cuentaBancaria.tipo_id);
             return View(cuentaBancaria);
         }
 
@@ -70,6 +75,8 @@ namespace banco.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.cliente_Id = new SelectList(db.cliente, "id", "nombre", cuentaBancaria.cliente_Id);
+            ViewBag.tipo_id = new SelectList(db.tipoCuentaBancaria, "id", "tipo", cuentaBancaria.tipo_id);
             return View(cuentaBancaria);
         }
 
@@ -78,7 +85,7 @@ namespace banco.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,cliente_id,Moneda,tipo_id")] cuentaBancaria cuentaBancaria)
+        public ActionResult Edit([Bind(Include = "id,cliente_Id,Moneda,tipo_id")] cuentaBancaria cuentaBancaria)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +93,8 @@ namespace banco.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.cliente_Id = new SelectList(db.cliente, "id", "nombre", cuentaBancaria.cliente_Id);
+            ViewBag.tipo_id = new SelectList(db.tipoCuentaBancaria, "id", "tipo", cuentaBancaria.tipo_id);
             return View(cuentaBancaria);
         }
 

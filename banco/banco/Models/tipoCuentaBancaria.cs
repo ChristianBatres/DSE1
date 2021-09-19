@@ -20,5 +20,7 @@ namespace banco.Models
         public string tipo { get; set; }
 
         public bool Activo { get; set; }
+
+        public virtual ICollection<cuentaBancaria> CuentaBancarias { get; set; } // propiedad de navegación de colección
     }
 }

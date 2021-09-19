@@ -25,7 +25,7 @@ namespace banco.Models
         public virtual DbSet<cliente> cliente { get; set; }
         public virtual DbSet<tipoCuentaBancaria> tipoCuentaBancaria { get; set; }
         public virtual DbSet<cuentaBancaria> cuentaBancaria { get; set; }
-        public virtual DbSet<transacciones> Transacciones { get; set; }
+        public virtual DbSet<transaccion> transaccion { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

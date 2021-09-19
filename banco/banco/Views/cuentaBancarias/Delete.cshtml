@@ -12,11 +12,19 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.cliente_id)
+            @Html.DisplayNameFor(model => model.cliente.nombre)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.cliente_id)
+            @Html.DisplayFor(model => model.cliente.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipoCuentaBancaria.tipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipoCuentaBancaria.tipo)
         </dd>
 
         <dt>
@@ -25,14 +33,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.Moneda)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tipo_id)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tipo_id)
         </dd>
 
     </dl>

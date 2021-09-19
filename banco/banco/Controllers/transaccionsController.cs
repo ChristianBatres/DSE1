@@ -10,107 +10,116 @@ using banco.Models;
 
 namespace banco.Controllers
 {
-    public class transaccionesController : Controller
+    public class transaccionsController : Controller
     {
         private sistemabancario db = new sistemabancario();
 
-        // GET: transacciones
+        // GET: transaccions
         public ActionResult Index()
         {
-            return View(db.Transacciones.ToList());
+            var transaccion = db.transaccion.Include(t => t.cuentaBancaria).Include(t => t.tipoTransaccion);
+            return View(transaccion.ToList());
         }
 
-        // GET: transacciones/Details/5
+        // GET: transaccions/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            transacciones transacciones = db.Transacciones.Find(id);
-            if (transacciones == null)
+            transaccion transaccion = db.transaccion.Find(id);
+            if (transaccion == null)
             {
                 return HttpNotFound();
             }
-            return View(transacciones);
+            return View(transaccion);
         }
 
-        // GET: transacciones/Create
+        // GET: transaccions/Create
         public ActionResult Create()
         {
+            ViewBag.cuentaBancaria_id = new SelectList(db.cuentaBancaria, "id", "Moneda");
+            ViewBag.tipoTransaccion_id = new SelectList(db.tipoTransaccion, "id", "tipo");
             return View();
         }
 
-        // POST: transacciones/Create
+        // POST: transaccions/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,cuentaBancaria_id,tipoTransaccion_id,monto,Estado,fechaTransaccion,fechaAplicacion")] transacciones transacciones)
+        public ActionResult Create([Bind(Include = "id,cuentaBancaria_id,tipoTransaccion_id,monto,Estado,fechaTransaccion,fechaAplicacion")] transaccion transaccion)
         {
             if (ModelState.IsValid)
             {
-                db.Transacciones.Add(transacciones);
+                db.transaccion.Add(transaccion);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(transacciones);
+            ViewBag.cuentaBancaria_id = new SelectList(db.cuentaBancaria, "id", "Moneda", transaccion.cuentaBancaria_id);
+            ViewBag.tipoTransaccion_id = new SelectList(db.tipoTransaccion, "id", "tipo", transaccion.tipoTransaccion_id);
+            return View(transaccion);
         }
 
-        // GET: transacciones/Edit/5
+        // GET: transaccions/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            transacciones transacciones = db.Transacciones.Find(id);
-            if (transacciones == null)
+            transaccion transaccion = db.transaccion.Find(id);
+            if (transaccion == null)
             {
                 return HttpNotFound();
             }
-            return View(transacciones);
+            ViewBag.cuentaBancaria_id = new SelectList(db.cuentaBancaria, "id", "Moneda", transaccion.cuentaBancaria_id);
+            ViewBag.tipoTransaccion_id = new SelectList(db.tipoTransaccion, "id", "tipo", transaccion.tipoTransaccion_id);
+            return View(transaccion);
         }
 
-        // POST: transacciones/Edit/5
+        // POST: transaccions/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,cuentaBancaria_id,tipoTransaccion_id,monto,Estado,fechaTransaccion,fechaAplicacion")] transacciones transacciones)
+        public ActionResult Edit([Bind(Include = "id,cuentaBancaria_id,tipoTransaccion_id,monto,Estado,fechaTransaccion,fechaAplicacion")] transaccion transaccion)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(transacciones).State = EntityState.Modified;
+                db.Entry(transaccion).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(transacciones);
+            ViewBag.cuentaBancaria_id = new SelectList(db.cuentaBancaria, "id", "Moneda", transaccion.cuentaBancaria_id);
+            ViewBag.tipoTransaccion_id = new SelectList(db.tipoTransaccion, "id", "tipo", transaccion.tipoTransaccion_id);
+            return View(transaccion);
         }
 
-        // GET: transacciones/Delete/5
+        // GET: transaccions/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            transacciones transacciones = db.Transacciones.Find(id);
-            if (transacciones == null)
+            transaccion transaccion = db.transaccion.Find(id);
+            if (transaccion == null)
             {
                 return HttpNotFound();
             }
-            return View(transacciones);
+            return View(transaccion);
         }
 
-        // POST: transacciones/Delete/5
+        // POST: transaccions/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            transacciones transacciones = db.Transacciones.Find(id);
-            db.Transacciones.Remove(transacciones);
+            transaccion transaccion = db.transaccion.Find(id);
+            db.transaccion.Remove(transaccion);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

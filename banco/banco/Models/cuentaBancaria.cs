@@ -13,15 +13,22 @@ namespace banco.Models
         [Key]
         public int id { get; set; }
 
-        public int? cliente_id { get; set; }
-        public virtual cliente clientes { get; set; }
+
+        [ForeignKey("cliente")] //se utilizar ya que para la llave forarea no se utiliza la convesión de nombres
+        public int cliente_Id { get; set; } //llave foranea
+        public virtual cliente cliente { get; set; } // propiedad de navegación de referencia
 
         [StringLength(20)]
-        [Required(ErrorMessage = "Ingresa la moneda que manejara la cuenta")]
+        [Required(ErrorMessage = "Ingrese la moneda quee manejara la cuenta")]
         public string Moneda { get; set; }
 
 
-        public int? tipo_id { get; set; }
-        public virtual tipoCuentaBancaria tipos { get; set; }
+        [ForeignKey("tipoCuentaBancaria")] //se utilizar ya que para la llave forarea no se utiliza la convesión de nombres
+        public int tipo_id { get; set; } //llave foranea
+        public virtual tipoCuentaBancaria tipoCuentaBancaria { get; set; } // propiedad de navegación de referencia
+
+        public virtual ICollection<transaccion> transacciones { get; set; } // propiedad de navegación de colección
+
+
     }
 }
